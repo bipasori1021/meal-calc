@@ -2,7 +2,7 @@ name: OneDrive Auto Sync
 
 on:
   schedule:
-    - cron: '*/2 * * * *'  # 매 10분마다 실행 (시간 조정 가능)
+    - cron: '*/10 * * * *'  # 매 10분마다 실행 (시간 조정 가능)
   push:
     branches:
       - main
@@ -17,15 +17,17 @@ jobs:
       
       - name: Set up Git
         run: |
-          git config --global user.name "bipasori1021"
-          git config --global user.email "bipasori1021@gmail.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
-      - name: Sync from OneDrive
+      - name: Sync with OneDrive
         run: |
-          git add .
-          echo "🚀 OneDrive 연동 테스트 실행 중0..."
-          echo "🚀 OneDrive 연동 테스트 실행 중5..."
-          git commit -m "Auto-sync from OneDrive"
           echo "🚀 OneDrive 연동 테스트 실행 중1..."
-          git push origin main
+          cd $HOME/OneDrive\01 개인\01 운동\식단 계산기\web-data
           echo "🚀 OneDrive 연동 테스트 실행 중2..."
+          git add .
+          echo "🚀 OneDrive 연동 테스트 실행 중3..."
+          git commit -m "Auto-sync from OneDrive"
+          echo "🚀 OneDrive 연동 테스트 실행 중4..."
+          git push origin main
+          echo "🚀 OneDrive 연동 테스트 실행 중5..."
