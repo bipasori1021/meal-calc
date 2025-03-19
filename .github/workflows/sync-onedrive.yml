@@ -23,7 +23,6 @@ jobs:
       - name: Sync with OneDrive
         run: |
           echo "🚀 OneDrive 연동 테스트 실행 중1..."
-          cd $HOME/OneDrive\01 개인\01 운동\식단 계산기\web-data
           echo "🚀 OneDrive 연동 테스트 실행 중2..."
           git add .
           echo "🚀 OneDrive 연동 테스트 실행 중3..."
