@@ -24,6 +24,7 @@ jobs:
         run: |
           git add .
           echo "🚀 OneDrive 연동 테스트 실행 중0..."
+          echo "🚀 OneDrive 연동 테스트 실행 중5..."
           git commit -m "Auto-sync from OneDrive"
           echo "🚀 OneDrive 연동 테스트 실행 중1..."
           git push origin main
