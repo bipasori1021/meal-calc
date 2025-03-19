@@ -20,7 +20,7 @@ jobs:
 
       - name: Sync from OneDrive
         run: |
-          cd C:\Users\82102\OneDrive\01 개인\01 운동\식단 계산기\web-data
+          cd "C:\Users\82102\OneDrive\01 개인\01 운동\식단 계산기\web-data"
           echo "🚀 OneDrive 연동 테스트 실행 중..."
           git add .
           git commit -m "Auto-sync from OneDrive"
