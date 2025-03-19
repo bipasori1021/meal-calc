@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식단 계산기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>식단 계산기1</h1>
+        <form id="tdeeForm">
+            <label>이름: <input type="text" id="name" required></label>
+            <label>신장(cm): <input type="number" id="height" required></label>
+            <label>체중(kg): <input type="number" id="weight" required></label>
+            <label>체지방량(kg): <input type="number" id="fatMass" required></label>
+            <label>골격근량(kg): <input type="number" id="muscleMass" required></label>
+
+            <label>활동 수준:
+                <select id="activityLevel">
+                    <option value="1.2">앉아서 생활</option>
+                    <option value="1.375">가벼운 활동</option>
+                    <option value="1.55">활동적</option>
+                </select>
+            </label>
+
+            <label>운동 빈도(회/주):
+                <input type="number" id="exerciseFrequency" min="1" max="7" required>
+            </label>
+
+            <label>운동 강도:
+                <select id="exerciseIntensity">
+                    <option value="1.1">가벼운</option>
+                    <option value="1.2">보통</option>
+                    <option value="1.3">고강도</option>
+                    <option value="1.4">매우 고강도</option>
+                </select>
+            </label>
+
+            <label>식단 빈도(회/주):
+                <input type="number" id="dietFrequency" min="1" max="7" required>
+            </label>
+
+            <button type="button" onclick="calculateTDEE()">계산하기</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
