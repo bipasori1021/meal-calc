@@ -8,6 +8,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -17,6 +18,19 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
 
+      - name: Show OneDrive Path (Debug)
+        run: echo "OneDrive Path: $ONEDRIVE_PATH"
+
       - name: Sync with OneDrive
+        env:
+          ONEDRIVE_PATH: ${{ secrets.ONEDRIVE_PATH }}
         run: |
-          echo "자동 동기화 설정됨!"
+          if [ -d "$ONEDRIVE_PATH" ]; then
+            cd "$ONEDRIVE_PATH"
+            git add .
+            git commit -m "Auto-sync from OneDrive"
+            git push origin main
+          else
+            echo "❌ ERROR: OneDrive path does not exist!"
+            exit 1
+          fi
