@@ -11,7 +11,7 @@ $gitStatus = git status --porcelain
 if ($gitStatus -ne "") {
     Write-Host "🚀 변경 사항 감지됨! GitHub에 자동 푸시 중..."
     git add .
-    git commit -m "Auto-sync from OneDrive"
+    git commit -m "Auto-sync from OneDrive1111"
     git push origin main
     Write-Host "✅ GitHub 업데이트 완료!"
 } else {
